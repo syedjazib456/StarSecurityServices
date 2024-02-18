@@ -1,0 +1,207 @@
+﻿@model Star_Security_Services.Models.Data.Employee
+
+@{
+    ViewData["Title"] = "AddEmployee";
+    Layout = "~/Views/Shared/_LayoutOfficials.cshtml";
+}
+<!-- Page Header-->
+<div class="page-header no-margin-bottom">
+    <div class="container-fluid">
+        <h2 class="h5 no-margin-bottom">Add Employee</h2>
+    </div>
+</div>
+<!-- Breadcrumb-->
+<div class="container-fluid">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-action="Dashboard" asp-controller="Home">Home</a></li>
+        <li class="breadcrumb-item active"><a asp-action="ViewEmployee">Back to List</a>  </li>
+    </ul>
+</div>
+<section class="no-padding-top">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Horizontal Form-->
+            <div class="col-lg-12">
+                <div class="block">
+                    <div class="title"><strong class="d-block">Employee</strong></div>
+                    <div class="block-body">
+                        <form class="form-horizontal" asp-action="AddEmployee" method="post" enctype="multipart/form-data">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label" asp-for="Emp_name" class="control-label"> </label>
+                                <div class="col-sm-9">
+                                    <input id="inputHorizontalSuccess" asp-for="Emp_name" class="form-control" class="form-control form-control-success" />
+                                </div>
+                                <span asp-validation-for="Emp_name" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label" asp-for="Emp_profile" class="control-label"> </label>
+                                <div class="col-sm-9">
+                                    <input id="inputHorizontalSuccess" asp-for="Emp_profile" class="form-control" class="form-control form-control-success" />
+                                </div>
+                                <span asp-validation-for="Emp_profile" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label" asp-for="Emp_qualification" class="control-label"> </label>
+                                <div class="col-sm-9">
+                                    <input id="inputHorizontalSuccess" asp-for="Emp_qualification" class="form-control" class="form-control form-control-success" />
+                                </div>
+                                <span asp-validation-for="Emp_qualification" class="text-danger"></span>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label" asp-for="Emp_age" class="control-label"> </label>
+                                <div class="col-sm-9">
+                                    <input id="inputHorizontalSuccess" asp-for="Emp_age" class="form-control" class="form-control form-control-success" />
+                                </div>
+                                <span asp-validation-for="Emp_age" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label" asp-for="Emp_email" class="control-label"> </label>
+                                <div class="col-sm-9">
+                                    <input id="inputHorizontalSuccess" asp-for="Emp_email" class="form-control" class="form-control form-control-success" />
+                                </div>
+                                <span asp-validation-for="Emp_email" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label" asp-for="Emp_contact" class="control-label"> </label>
+                                <div class="col-sm-9">
+                                    <input id="inputHorizontalSuccess" asp-for="Emp_contact" class="form-control" class="form-control form-control-success" />
+                                </div>
+                                <span asp-validation-for="Emp_contact" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group row">
+                                <label asp-for="Dep_id" class="col-sm-3 form-control-label">Select </label>
+                                <div class="col-sm-9">
+                                    <select asp-for="Dep_id" class="form-control mb-3 mb-3">
+                                        <option disabled selected>--Select Department--</option>
+                                        @foreach (var data in ViewBag.department)
+                                        {
+                                            <option value="@data.Dept_id">@data.Dept_name</option>
+                                        }
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="Dep_id" class="col-sm-3 form-control-label">Select Role</label>
+                                <div class="col-sm-9">
+                                    <select asp-for="RoleID" class="form-control mb-3 mb-3">
+                                        <option disabled selected>--Select Role--</option>
+                                        @foreach (var item in ViewBag.role)
+                                        {
+                                            <option value="@item.Role_id">@item.Role_name</option>
+                                        }
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label" asp-for="Emp_Grade" class="control-label"> </label>
+                                <div class="col-sm-9">
+                                    <input id="inputHorizontalSuccess" asp-for="Emp_Grade" class="form-control" class="form-control form-control-success" />
+                                </div>
+                                <span asp-validation-for="Emp_Grade" class="text-danger"></span>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label" asp-for="Emp_address" class="control-label"> </label>
+                                <div class="col-sm-9">
+                                    <input id="inputHorizontalSuccess" asp-for="Emp_address" class="form-control" class="form-control form-control-success" />
+                                </div>
+                                <span asp-validation-for="Emp_address" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-sm-9 offset-sm-3">
+                                    <input type="submit" value="Add Employee" class="btn btn-primary">
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@* <h1>AddEmployee</h1>
+
+<h4>Employee</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddEmployee">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Emp_name" class="control-label"></label>
+                <input asp-for="Emp_name" class="form-control" />
+                <span asp-validation-for="Emp_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Emp_email" class="control-label"></label>
+                <input asp-for="Emp_email" class="form-control" />
+                <span asp-validation-for="Emp_email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Emp_contact" class="control-label"></label>
+                <input asp-for="Emp_contact" class="form-control" />
+                <span asp-validation-for="Emp_contact" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Emp_address" class="control-label"></label>
+                <input asp-for="Emp_address" class="form-control" />
+                <span asp-validation-for="Emp_address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Emp_qualification" class="control-label"></label>
+                <input asp-for="Emp_qualification" class="form-control" />
+                <span asp-validation-for="Emp_qualification" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Emp_Role" class="control-label"></label>
+                <input asp-for="Emp_Role" class="form-control" />
+                <span asp-validation-for="Emp_Role" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Emp_Grade" class="control-label"></label>
+                <input asp-for="Emp_Grade" class="form-control" />
+                <span asp-validation-for="Emp_Grade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Emp_age" class="control-label"></label>
+                <input asp-for="Emp_age" class="form-control" />
+                <span asp-validation-for="Emp_age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmpImage" class="control-label"></label>
+                <input asp-for="EmpImage" class="form-control" />
+                <span asp-validation-for="EmpImage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dep_id" class="control-label"></label>
+                <select asp-for="Dep_id" class ="form-control" asp-items="ViewBag.Dep_id"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+ *@
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

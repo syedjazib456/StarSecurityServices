@@ -1,0 +1,132 @@
+﻿@model IEnumerable<Star_Security_Services.Models.Data.Services>
+
+@{
+    ViewData["Title"] = "ViewService";
+    Layout = "~/Views/Shared/_LayoutOfficials.cshtml";
+}
+<div class="page-header no-margin-bottom">
+    <div class="container-fluid">
+        <h2 class="h5 no-margin-bottom">Services Table</h2>
+    </div>
+</div>
+@if (TempData["msg"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["msg"]
+
+
+    </div>
+}
+@if (TempData["edit"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["edit"]
+
+    </div>
+}
+@if (TempData["del_sr"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["del_sr"]
+
+    </div>
+}
+<!-- Breadcrumb-->
+<div class="container-fluid">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-action="Dashboard" asp-controller="Home">Home</a></li>
+        <li class="breadcrumb-item active"><a asp-action="AddServices">Add Service</a>  </li>
+    </ul>
+
+</div>
+<section class="no-padding-top">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="block margin-bottom-sm">
+                    <div class="title"><strong>View Services</strong></div>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                <tr>
+                                    <th>
+                                            @Html.DisplayNameFor(model => model.ServiceName)
+                                    </th>
+                                    <th>
+                                            @Html.DisplayNameFor(model => model.ServiceImage)
+                                    </th>
+                                   
+
+
+                                    <th>Action</th>
+                                </tr>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ServiceName)
+                                        </td>
+                                        <td>
+                                            <img src="~/images/@Html.DisplayFor(modelItem => item.ServiceImage)" width="200px" height="200px">
+                                        </td>
+                                        
+
+
+                                        <td>
+
+                                            <a asp-action="ServiceDetails" asp-controller="Services" asp-route-id="@item.ServiceID">Details</a>
+
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+@* <h1>ViewService</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceImage)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceImage)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ServiceID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ServiceID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ServiceID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+ *@

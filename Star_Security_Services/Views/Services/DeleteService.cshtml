@@ -1,0 +1,98 @@
+﻿@model Star_Security_Services.Models.Data.Services
+
+@{
+    ViewData["Title"] = "DeleteService";
+    Layout = "~/Views/Shared/_LayoutOfficials.cshtml";
+}
+<div class="page-header">
+    <div class="container-fluid">
+        <h2 class="h5 no-margin-bottom">Delete Confirmation</h2>
+    </div>
+</div>
+
+
+
+<section class="no-padding-bottom">
+    <div class="container-fluid">
+        <div class="public-user-block block">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-4 d-flex align-items-center">
+
+                    <strong class="d-block"> @Html.DisplayNameFor(model => model.ServiceName)</strong>
+                </div>
+                <div class="col-lg-8 text-center">
+                    <div class="contributions"> @Html.DisplayFor(model => model.ServiceName)</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="public-user-block block">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-4 d-flex align-items-center">
+
+                    <strong class="d-block"> @Html.DisplayNameFor(model => model.ServiceImage)</strong>
+                </div>
+                <div class="col-lg-8 ">
+                    <div class="stats-with-chart-1 block">
+                        <img src="~/images/@Html.DisplayFor(model => model.ServiceImage)" width="200px" height="200px">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        @*  Buttons *@
+        <div class="public-user-block block">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-4 d-flex align-items-center">
+
+                    <strong class="d-block">Are you sure you want to delete this?</strong>
+                </div>
+                <div class="col-lg-8 text-center row megamenu-buttons ">
+                    <div class="col-lg-2 col-md-4 col-lg-4">
+                        <form asp-action="DeleteService">
+                            <input type="hidden" asp-for="ServiceID" />
+                            <input type="submit" value="Yes" class="d-block megamenu-button-link bg-danger text-light" />
+                        </form>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-lg-4"><a asp-action="ViewService" class="d-block megamenu-button-link bg-info text-light"><strong>No</strong></a></div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+</section>
+
+
+@* <h1>DeleteService</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Services</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ServiceName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ServiceName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ServiceImage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ServiceImage)
+        </dd>
+    </dl>
+    
+    <form asp-action="DeleteService">
+        <input type="hidden" asp-for="ServiceID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
+ *@

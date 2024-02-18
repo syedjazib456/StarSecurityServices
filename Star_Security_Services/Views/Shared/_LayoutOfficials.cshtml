@@ -1,0 +1,127 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="~/AdminUI/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="~/AdminUI/vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Custom Font Icons CSS-->
+    <link rel="stylesheet" href="~/AdminUI/css/font.css">
+    <!-- Google fonts - Muli-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,700">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="~/AdminUI/css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="~/AdminUI/css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="~/AdminUI/img/favicon.ico">
+
+</head>
+<body>
+
+ 
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="search-panel">
+                <div class="search-inner d-flex align-items-center justify-content-center">
+                    <div class="close-btn">Close <i class="fa fa-close"></i></div>
+                    <form id="searchForm" action="#">
+                        <div class="form-group">
+                            <input type="search" name="search" placeholder="What are you searching for...">
+                            <button type="submit" class="submit">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="container-fluid d-flex align-items-center justify-content-between">
+                <div class="navbar-header">
+                    <!-- Navbar Header--><a href="index.html" class="navbar-brand">
+                        <div class="brand-text brand-big visible text-uppercase"><strong class="text-primary">Admin</strong><strong>Panel</strong></div>
+                        <div class="brand-text brand-sm"><strong class="text-primary">A</strong><strong>P</strong></div>
+                    </a>
+                    <!-- Sidebar Toggle Btn-->
+                    <button class="sidebar-toggle"><i class="fa fa-long-arrow-left"></i></button>
+                    <div class="list-inline-item logout"> <a id="logout" href="login.html" class="nav-link">Logout <i class="icon-logout"></i></a></div>
+                </div>
+              
+            </div>
+        </nav>
+    </header>
+    <div class="d-flex align-items-stretch">
+        <!-- Sidebar Navigation-->
+        <nav id="sidebar">
+            <!-- Sidebar Header-->
+            <div class="sidebar-header d-flex align-items-center">
+                <div class="avatar"><img src="~/img/team-2.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                <div class="title">
+                    <h1 class="h5">Mark Stephen</h1>
+                    <p>Admin</p>
+                </div>
+            </div>
+            <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
+            <ul class="list-unstyled">
+                <li class="active"><a asp-action="Dashboard" asp-controller="Home"> <i class="icon-home"></i>Home </a></li>
+                <li>
+                    <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-grid"></i>Views </a>
+                    <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                        <li><a asp-action="ViewAdmin" asp-controller="Admin">View Admin</a></li>
+                        <li><a asp-action="ViewService" asp-controller="Services">View Services</a></li>
+                        <li><a  asp-action="ViewEmployees" asp-controller="Employees">View Employees</a></li>
+                        <li><a asp-action="ViewVacancy" asp-controller="Vacancies">View Vacancies</a> </li>
+                        <li><a  asp-action="ViewClient" asp-controller="Clients">View Clients</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#exampledropdownDropdown1" aria-expanded="false" data-toggle="collapse"> <i class="icon-padnote"></i>Forms </a>
+                    <ul id="exampledropdownDropdown1" class="collapse list-unstyled ">
+                        <li><a asp-action="AddAdmin" asp-controller="Admin">Add Admin</a></li>
+                        <li><a  asp-action="AddServices" asp-controller="Services">Add Services</a></li>
+                        <li><a  asp-action="AddEmployee" asp-controller="Employees">Add Employee</a></li>
+                        <li><a  asp-action="AddVacancy" asp-controller="Vacancies">Add Vacancy</a></li>
+                        <li><a  asp-action="AddClient" asp-controller="Clients">Add Client</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#exampledropdownDropdown2" aria-expanded="false" data-toggle="collapse"> <i class="icon-padnote"></i>Other Links </a>
+                    <ul id="exampledropdownDropdown2" class="collapse list-unstyled ">
+                        <li><a  asp-action="ViewRole" asp-controller="EmpRoles">View Roles</a></li>
+                        <li><a  asp-action="ViewDept" asp-controller="Department">View Department</a></li>
+                        <li><a  asp-action="ViewIndustry" asp-controller="Industries">View Industry</a></li>
+                        <li><a  asp-action="ViewProject" asp-controller="Projects">View Project</a></li>
+                    </ul>
+                </li>
+            </ul><span class="heading">Extras</span>
+            <ul class="list-unstyled">
+                <li> <a asp-action="ViewContact" asp-controller="Home"> <i class="icon-settings"></i>Messages </a></li>
+              
+            </ul>
+        </nav>
+
+        <div class="page-content">
+        @RenderBody()
+            <footer class="footer">
+                <div class="footer__block block no-margin-bottom">
+                    <div class="container-fluid text-center">
+                        <p class="no-margin-bottom">Star Star Security Services <a target="_blank" href="https://templateshub.net">Templates Hub</a>.</p>
+                    </div>
+                </div>
+            </footer>
+       </div>
+       </div>
+</body>
+<script src="~/AdminUI/vendor/jquery/jquery.min.js"></script>
+<script src="~/AdminUI/vendor/popper.js/umd/popper.min.js"> </script>
+<script src="~/AdminUI/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="~/AdminUI/vendor/jquery.cookie/jquery.cookie.js"> </script>
+<script src="~/AdminUI/vendor/chart.js/Chart.min.js"></script>
+<script src="~/AdminUI/vendor/jquery-validation/jquery.validate.min.js"></script>
+<script src="~/AdminUI/js/front.js"></script>
+
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+</html>

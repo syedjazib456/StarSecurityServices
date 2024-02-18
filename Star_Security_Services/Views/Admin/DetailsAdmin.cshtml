@@ -1,0 +1,94 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Star_Security_Services.Models.Data.Admin
+
+@{
+    ViewData["Title"] = "DetailsAdmin";
+    Layout = "~/Views/Shared/_LayoutOfficials.cshtml";
+}
+
+
+<div class="page-header">
+    <div class="container-fluid">
+        <h2 class="h5 no-margin-bottom">Admin Details</h2>
+    </div>
+</div>
+
+
+
+<section class="no-padding-bottom">
+    <div class="container-fluid">
+        <div class="public-user-block block">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-4 d-flex align-items-center">
+
+                    <strong class="d-block"> @Html.DisplayNameFor(model => model.AdminName)</strong>
+                </div>
+                <div class="col-lg-8 text-center">
+                    <div class="contributions"> @Html.DisplayFor(model => model.AdminName)</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="public-user-block block">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-4 d-flex align-items-center">
+
+                    <strong class="d-block"> @Html.DisplayNameFor(model => model.AdminImage)</strong>
+                </div>
+                <div class="col-lg-8 ">
+                    <div class="stats-with-chart-1 block">
+                        <img src="~/images/@Html.DisplayFor(model => model.AdminImage)" width="200px" height="200px">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="public-user-block block">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-4 d-flex align-items-center">
+
+                    <strong class="d-block"> @Html.DisplayNameFor(model => model.AdminEmail)</strong>
+                </div>
+                <div class="col-lg-8 text-center">
+                    <div class="contributions"> @Html.DisplayFor(model => model.AdminEmail)</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="public-user-block block">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-4 d-flex align-items-center">
+
+                    <strong class="d-block"> @Html.DisplayNameFor(model => model.AdminContact)</strong>
+                </div>
+                <div class="col-lg-8 text-center">
+                    <div class="contributions"> @Html.DisplayFor(model => model.AdminContact)</div>
+                </div>
+
+            </div>
+        </div>
+
+        @*  Buttons *@
+        <div class="public-user-block block">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-4 d-flex align-items-center">
+
+                    <strong class="d-block">Actions</strong>
+                </div>
+                <div class="col-lg-8 text-center row megamenu-buttons ">
+                    <div class="col-lg-2 col-md-4 col-lg-4"><a asp-action="DeleteAdmin" asp-route-id="@Model.AdminId" class="d-block megamenu-button-link bg-danger text-light"><strong>Delete</strong></a></div>
+                    <div class="col-lg-2 col-md-4 col-lg-4"><a asp-action="EditAdmin" asp-route-id="@Model.AdminId" class="d-block megamenu-button-link bg-info text-light"><strong>Edit</strong></a></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,149 @@
+﻿@model IEnumerable<Star_Security_Services.Models.Data.Industries>
+
+@{
+    ViewData["Title"] = "ViewIndustry";
+    Layout = "~/Views/Shared/_LayoutOfficials.cshtml";
+}
+
+
+<div class="page-header no-margin-bottom">
+    <div class="container-fluid">
+        <h2 class="h5 no-margin-bottom">Industry Table</h2>
+    </div>
+</div>
+@if (TempData["msg"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["msg"]
+
+       
+    </div>
+}
+@if (TempData["edit"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["edit"]
+
+    </div>
+}
+@if (TempData["del_ind"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["del_ind"]
+
+    </div>
+}
+<!-- Breadcrumb-->
+<div class="container-fluid">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-action="Dashboard" asp-controller="Home">Home</a></li>
+        <li class="breadcrumb-item active"><a asp-action="AddIndustry">Add Industry</a>  </li>
+    </ul>
+    <div class="container mb-3" >
+    <form  asp-action="ViewIndustry" method="get">
+        <input type="text" class="bg-dark text-light" placeholder="Search by Name" name="search" width="450px" height="120px"/>
+        <input type="submit" class=" btn btn-dark btn-outline-info" value="Search" />
+    </form>
+    </div>
+</div>
+<section class="no-padding-top">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="block margin-bottom-sm">
+                    <div class="title"><strong>View Industry</strong></div>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                <tr>
+                                    <th>
+                                            @Html.DisplayNameFor(model => model.IndustryName)
+                                    </th>
+                                      <th>
+                                    @Html.DisplayNameFor(model => model.IndustryImage)
+                                    </th>
+                                   
+                                 
+                                    <th>Action</th>
+                                </tr>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IndustryName)
+                                        </td>
+                                         <td>
+                                            <img src="~/images/@Html.DisplayFor(modelItem => item.IndustryImage)" width="200px" height="200px">
+                                    </td>
+              
+                                        <td>
+                                         
+                                            <a asp-action="DetailsIndustry" asp-controller="Industries" asp-route-id="@item.IndustryId">Details</a> 
+                                       
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+@* <h1>ViewClient</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ClientName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClientProfession)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClientImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClientReview)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientProfession)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientReview)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ClientId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ClientId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ClientId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+ *@

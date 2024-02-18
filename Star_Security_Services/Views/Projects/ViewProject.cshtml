@@ -1,0 +1,163 @@
+﻿@model IEnumerable<Star_Security_Services.Models.Data.Projects>
+
+@{
+    ViewData["Title"] = "ViewProject";
+    Layout = "~/Views/Shared/_LayoutOfficials.cshtml";
+}
+
+<div class="page-header no-margin-bottom">
+    <div class="container-fluid">
+        <h2 class="h5 no-margin-bottom">Project Table</h2>
+    </div>
+</div>
+@if (TempData["msg"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["msg"]
+
+       
+    </div>
+}
+@if (TempData["edit"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["edit"]
+
+    </div>
+}
+@if (TempData["del_pr"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["del_pr"]
+
+    </div>
+}
+<!-- Breadcrumb-->
+<div class="container-fluid">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-action="Dashboard" asp-controller="Home">Home</a></li>
+        <li class="breadcrumb-item active"><a asp-action="AddProject">Add Project</a>  </li>
+    </ul>
+    <div class="container mb-3" >
+    <form  asp-action="ViewProject" method="get">
+        <input type="text" class="bg-dark text-light" placeholder="Search by Name" name="search" width="450px" height="120px"/>
+        <input type="submit" class=" btn btn-dark btn-outline-info" value="Search" />
+    </form>
+    </div>
+</div>
+<section class="no-padding-top">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="block margin-bottom-sm">
+                    <div class="title"><strong>View Projects</strong></div>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                <tr>
+                                    <th>
+                                            @Html.DisplayNameFor(model => model.ProjectName)
+                                    </th>
+                                        @*    <th>
+                                    @Html.DisplayNameFor(model => model.ProjectImage)
+                                    </th> *@
+                                    <th>
+                                            @Html.DisplayNameFor(model => model.Project_createdate)
+                                    </th>
+                                    <th>
+                                            @Html.DisplayNameFor(model => model.Project_enddate)
+                                    </th>
+                                 
+                                    <th>Action</th>
+                                </tr>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ProjectName)
+                                        </td>
+                                        @*  <td>
+                                    <img src="~/images/@Html.DisplayFor(modelItem => item.ProjectImage)">
+                                    </td> *@
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Project_createdate)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Project_enddate)
+                                        </td>
+                                     
+                                        <td>
+                                         
+                                            <a asp-action="DetailsProject" asp-controller="Projects" asp-route-pr_id="@item.ProjectId">Details</a> 
+                                       
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+@* 
+<h1>ViewProject</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<form asp-action="ViewProject" method="get">
+    <input type="text" placeholder="Search by Name" name="search" />
+    <input type="submit" value="Search" />
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project_createdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project_enddate)
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectName)
+            </td>
+            <td>
+                    <img src="~/images/@Html.DisplayFor(modelItem => item.ProjectImage)">
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Project_createdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Project_enddate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ProjectId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ProjectId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ProjectId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+ *@

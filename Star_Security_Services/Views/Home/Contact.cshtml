@@ -1,0 +1,142 @@
+﻿@model Star_Security_Services.Models.Data.Contact
+@{
+    ViewData["Title"] = "ContactPage";
+}
+
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container">
+        <h1 class="display-3 mb-4 animated slideInDown">Contact</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Contact</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Contact Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        @if (TempData["msg"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                @TempData["msg"]
+
+
+            </div>
+        }
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Contact</p>
+                <h1 class="display-5 mb-4">If You Have Any Query, Please Contact Us</h1>
+                <p class="mb-4"></p>
+                <form asp-action="Contact">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" asp-for="Name" class="form-control" id="name" placeholder="Your Name">
+                                <label asp-for="Name" >Your Name</label>
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="email" asp-for="Email" class="form-control" id="email" placeholder="Your Email">
+                                <label asp-for="Email">Your Email</label>
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="text" asp-for="Subject" class="form-control" id="subject" placeholder="Subject">
+                                <label asp-for="Subject">Subject</label>
+                                <span asp-validation-for="Subject" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control" asp-for="Message" placeholder="Leave a message here" id="message"
+                                          style="height: 100px"></textarea>
+                                <label asp-for="Message">Message</label>
+                                <span asp-validation-for="Message" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary py-3 px-5" type="submit">Send Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 450px;">
+                <div class="position-relative rounded overflow-hidden h-100">
+                    <iframe class="position-relative w-100 h-100"
+                            src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d2884.239259825447!2d54.37229037425347!3d24.474903878182953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3e5e67c1c4e57ac5%3A0x63339ddab306a991!2sF9FF%2BXW9%20Star%20Security%20Services%20L.LC.%20-%20Al%20Danah%20-%20Zone%201%20-%20Abu%20Dhabi%20-%20United%20Arab%20Emirates!3m2!1d24.474903899999997!2d54.374865299999996!5e1!3m2!1sen!2sus!4v1707339363493!5m2!1sen!2sus"
+                            frameborder="0" style="min-height: 450px; border:0;" allowfullscreen="" aria-hidden="false"
+                            tabindex="0"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+<!-- Branches Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+
+            <h1 class="display-5 mb-5">Star Security </h1>
+            <p>Visit Our Other Branches</p>
+        </div>
+        <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.3s">
+            <div class="project-item pe-5 pb-5">
+                <div class="project-img mb-3">
+                    <iframe class="position-relative" src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d2884.239259825447!2d54.37229037425347!3d24.474903878182953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3e5e67c1c4e57ac5%3A0x63339ddab306a991!2sF9FF%2BXW9%20Star%20Security%20Services%20L.LC.%20-%20Al%20Danah%20-%20Zone%201%20-%20Abu%20Dhabi%20-%20United%20Arab%20Emirates!3m2!1d24.474903899999997!2d54.374865299999996!5e1!3m2!1sen!2sus!4v1707339363493!5m2!1sen!2sus" width="300" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="project-title">
+                    <h4 class="mb-0"> Al-Danah, Abu Dhabi</h4>
+                </div>
+            </div>
+            <div class="project-item pe-5 pb-5">
+                <div class="project-img mb-3">
+                    <iframe class="position-relative" src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d5725.354884353751!2d55.44764!3d25.399527!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDIzJzU4LjMiTiA1NcKwMjYnNTEuNSJF!5e1!3m2!1sen!2sus!4v1707339011747!5m2!1sen!2sus" width="300" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="project-title">
+                    <h4 class="mb-0"> Al Rashidiya 2 Branch</h4>
+                </div>
+            </div>
+            <div class="project-item pe-5 pb-5">
+                <div class="project-img mb-3">
+                    <iframe class="position-relative" src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d736037.7715424624!2d54.19420409345668!3d24.868702669898287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3e5f6bbd5ce4b0db%3A0x5ffb1d88e4626c3b!2sStar%20Security%20Services%20LLC%2C%20Al%20Moosa%20Tower%201%20-%20Trade%20Centre%20-%20Trade%20Centre%201%20-%20Dubai%20-%20United%20Arab%20Emirates!3m2!1d25.2167258!2d55.2776177!5e1!3m2!1sen!2sus!4v1707339687012!5m2!1sen!2sus" width="300" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="project-title">
+                    <h4 class="mb-0">Al-Moosa Tower</h4>
+                </div>
+            </div>
+            <div class="project-item pe-5 pb-5">
+                <div class="project-img mb-3">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d735261.7780376518!2d53.98537754687502!3d24.998704699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3e5f6d5aa95c7971%3A0xff381f16bb09b7e8!2sStar%20Security%20Services%20LLC%20new%20accomodation%20-%20Unnamed%20Road%20-%20Mina%20Jebel%20Ali%20-%20Jabal%20Ali%20Industrial%20First%20-%20Dubai%20-%20United%20Arab%20Emirates!3m2!1d24.998704699999998!2d55.138942!5e1!3m2!1sen!2sus!4v1707339872922!5m2!1sen!2sus" width="300" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="project-title">
+                    <h4 class="mb-0">Near Jabel Ali Industry</h4>
+
+                </div>
+            </div>
+            <div class="project-item pe-5 pb-5">
+                <div class="project-img mb-3">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d45920.60589202804!2d55.17246917074301!3d25.087480161787465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3e5f6c0fdcf8c319%3A0xc1b5948ee66f3482!2sAl%20Barsha%20-%20Dubai%20-%20United%20Arab%20Emirates!3m2!1d25.083827!2d55.220397!5e1!3m2!1sen!2sus!4v1707339970055!5m2!1sen!2sus" width="300" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="project-title">
+                    <h4 class="mb-0">Al Barsha , UAE</h4>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Branches End -->

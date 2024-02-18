@@ -1,0 +1,116 @@
+﻿@model IEnumerable<Star_Security_Services.Models.Data.Services>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!-- Page Header Start -->
+<div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container">
+        <h1 class="display-3 mb-4 animated slideInDown">Services</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Services</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- About Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <h1 class="display-5 mb-4 text-center">Smart Electronic Security</h1>
+        <div class="row g-4 align-items-end mb-4">
+            <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
+                <img class="img-fluid rounded" src="~/img/technology_1.jpg">
+            </div>
+            <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="border rounded p-4">
+                    <div class="tab-content p_style" id="nav-tabContent">
+                        Star Security Services is your go-to source for comprehensive Engineer, Procure, Install, and Commission (EPIC) solutions. With over 15 years of experience in the region, our team of experts manage the complete security systems projects lifecycle, from design and integration to maintenance and technology refresh. With our EPIC solutions, you can rest assured that your security system will stay up-to-date and remain properly maintained.
+                        <ul>
+                            <li>Electronic security design</li>
+                            <li>  Installation</li>
+                            <li>Commissioning and training</li>
+                            <li>Risk assessment & mitigation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border rounded p-4 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="row g-4">
+                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="h-100">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
+                                <i class="fa-solid fa-person-military-pointing " style="color: white;"></i>
+                            </div>
+                            <div class="ps-3">
+                                <h4>Man Guarding</h4>
+                                <span>Star Security provides a range of solutions to secure assets and people. Our experienced and NSI & SIRA-licensed guards...</span>
+                            </div>
+                            <div class="border-end d-none d-lg-block"></div>
+                        </div>
+                        <div class="border-bottom mt-4 d-block d-lg-none"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="h-100">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
+                                <i class="fa fa-users text-white"></i>
+                            </div>
+                            <div class="ps-3">
+                                <h4>Dedicated Team</h4>
+                                <span>Our highly trained mobile security teams provide a comprehensive range of services to ensure the safety and security...</span>
+                            </div>
+                            <div class="border-end d-none d-lg-block"></div>
+                        </div>
+                        <div class="border-bottom mt-4 d-block d-lg-none"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="h-100">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
+                                <i class="fa fa-phone text-white"></i>
+                            </div>
+                            <div class="ps-3">
+                                <h4>24/7 Available</h4>
+                                <span>We are ready to handle all the security related things and available in time of needs.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+<!-- Other Services Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Our Services</p>
+            <h1 class="display-5 mb-5">Have A Look At Other Services</h1>
+        </div>
+        <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.3s">
+            @foreach (var srvc in Model)
+            {
+                <div class="project-item pe-5 pb-5">
+                    <div class="project-img mb-3 img-service">
+                        <img class="img-fluid rounded" src="~/images/@Html.DisplayFor(ModelItem=>srvc.ServiceImage)" alt="">
+                        <a href=""><i class="fa fa-link fa-3x text-primary"></i></a>
+                    </div>
+                    <div class="project-title">
+                        <h4 class="mb-0">@Html.DisplayFor(ModelItem=>srvc.ServiceName)</h4>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<!-- Other Services End -->

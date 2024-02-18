@@ -1,0 +1,127 @@
+﻿@model Star_Security_Services.Models.Data.Clients
+
+@{
+    ViewData["Title"] = "DetailsClient";
+    Layout = "~/Views/Shared/_LayoutOfficials.cshtml";
+}
+
+    
+     <div class="page-header">
+          <div class="container-fluid">
+            <h2 class="h5 no-margin-bottom">Client Details</h2>
+          </div>
+        </div>
+
+
+
+        <section class="no-padding-bottom">
+          <div class="container-fluid">
+            <div class="public-user-block block">
+              <div class="row d-flex align-items-center">
+                <div class="col-lg-4 d-flex align-items-center">
+
+                    <strong class="d-block"> @Html.DisplayNameFor(model => model.ClientName)</strong>
+                </div>
+                <div class="col-lg-8 text-center">
+                    <div class="contributions"> @Html.DisplayFor(model => model.ClientName)</div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="public-user-block block">
+              <div class="row d-flex align-items-center">
+                <div class="col-lg-4 d-flex align-items-center">
+
+                    <strong class="d-block"> @Html.DisplayNameFor(model => model.ClientImage)</strong>
+                </div>
+                <div class="col-lg-8 ">
+                  <div class="stats-with-chart-1 block">
+                        <img src="~/images/@Html.DisplayFor(model => model.ClientImage)" width="200px" height="200px">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        <div class="public-user-block block">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-4 d-flex align-items-center">
+
+                    <strong class="d-block"> @Html.DisplayNameFor(model => model.ClientProfession)</strong>
+                </div>
+                <div class="col-lg-8 text-center">
+                    <div class="contributions"> @Html.DisplayFor(model => model.ClientProfession)</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="public-user-block block">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-4 d-flex align-items-center">
+
+                    <strong class="d-block"> @Html.DisplayNameFor(model => model.ClientReview)</strong>
+                </div>
+                <div class="col-lg-8 text-center">
+                    <div class="contributions"> @Html.DisplayFor(model => model.ClientReview)</div>
+                </div>
+
+            </div>
+        </div>
+
+       @*  Buttons *@
+        <div class="public-user-block block">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-4 d-flex align-items-center">
+
+                    <strong class="d-block">Actions</strong>
+                </div>
+                <div class="col-lg-8 text-center row megamenu-buttons ">
+                    <div class="col-lg-2 col-md-4 col-lg-4"><a asp-action="DeleteClient" asp-route-id="@Model.ClientId" class="d-block megamenu-button-link bg-danger text-light"><strong>Delete</strong></a></div>
+                    <div class="col-lg-2 col-md-4 col-lg-4"><a asp-action="EditClient" asp-route-id="@Model.ClientId" class="d-block megamenu-button-link bg-info text-light"><strong>Edit</strong></a></div>
+                </div>
+
+            </div>
+        </div>
+            </div>
+            </section>
+
+@* <h1>DetailsProject</h1>
+
+<div>
+    <h4>Projects</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProjectName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProjectName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProjectImage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProjectImage)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Project_createdate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Project_createdate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Project_enddate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Project_enddate)
+        </dd>
+    </dl>
+</div>
+<div>
+           <a asp-action="Delete" asp-route-id="@Model.ProjectId">Delete</a>
+    <a asp-action="Edit" asp-route-id="@Model.ProjectId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+ *@

@@ -1,0 +1,159 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Star_Security_Services.Models.Data.Employee
+
+@{
+    ViewData["Title"] = "DetailsEmployee";
+    Layout = "~/Views/Shared/_LayoutOfficials.cshtml";
+}
+
+
+<div class="page-header">
+    <div class="container-fluid">
+        <h2 class="h5 no-margin-bottom">Employee Details</h2>
+    </div>
+</div>
+
+
+
+<section class="no-padding-bottom">
+    <div class="container-fluid">
+        <div class="public-user-block block">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-4 d-flex align-items-center">
+
+                    <strong class="d-block"> @Html.DisplayNameFor(model => model.Emp_name)</strong>
+                </div>
+                <div class="col-lg-8 text-center">
+                    <div class="contributions"> @Html.DisplayFor(model => model.Emp_name)</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="public-user-block block">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-4 d-flex align-items-center">
+
+                    <strong class="d-block"> @Html.DisplayNameFor(model => model.Emp_profile)</strong>
+                </div>
+                <div class="col-lg-8 ">
+                    <div class="stats-with-chart-1 block">
+                        <img src="~/images/@Html.DisplayFor(model => model.Emp_profile)" width="200px" height="200px">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="public-user-block block">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-4 d-flex align-items-center">
+
+                    <strong class="d-block"> @Html.DisplayNameFor(model => model.Emp_contact)</strong>
+                </div>
+                <div class="col-lg-8 text-center">
+                    <div class="contributions"> @Html.DisplayFor(model => model.Emp_contact)</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="public-user-block block">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-4 d-flex align-items-center">
+
+                    <strong class="d-block"> @Html.DisplayNameFor(model => model.Emp_address)</strong>
+                </div>
+                <div class="col-lg-8 text-center">
+                    <div class="contributions"> @Html.DisplayFor(model => model.Emp_address)</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="public-user-block block">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-4 d-flex align-items-center">
+
+                    <strong class="d-block"> @Html.DisplayNameFor(model => model.Emp_age)</strong>
+                </div>
+                <div class="col-lg-8 text-center">
+                    <div class="contributions"> @Html.DisplayFor(model => model.Emp_age)</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="public-user-block block">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-4 d-flex align-items-center">
+
+                    <strong class="d-block"> @Html.DisplayNameFor(model => model.Emp_qualification)</strong>
+                </div>
+                <div class="col-lg-8 text-center">
+                    <div class="contributions"> @Html.DisplayFor(model => model.Emp_qualification)</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="public-user-block block">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-4 d-flex align-items-center">
+
+                    <strong class="d-block"> @Html.DisplayNameFor(model => model.Emp_Grade)</strong>
+                </div>
+                <div class="col-lg-8 text-center">
+                    <div class="contributions"> @Html.DisplayFor(model => model.Emp_Grade)</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="public-user-block block">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-4 d-flex align-items-center">
+
+                    <strong class="d-block"> @Html.DisplayNameFor(model => model.roles.Role_name)</strong>
+                </div>
+                <div class="col-lg-8 text-center">
+                    <div class="contributions"> @Html.DisplayFor(model => model.roles.Role_name)</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="public-user-block block">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-4 d-flex align-items-center">
+
+                    <strong class="d-block"> @Html.DisplayNameFor(model => model.department.Dept_name)</strong>
+                </div>
+                <div class="col-lg-8 text-center">
+                    <div class="contributions"> @Html.DisplayFor(model => model.department.Dept_name)</div>
+                </div>
+
+            </div>
+        </div>
+
+        @*  Buttons *@
+        <div class="public-user-block block">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-4 d-flex align-items-center">
+
+                    <strong class="d-block">Actions</strong>
+                </div>
+                <div class="col-lg-8 text-center row megamenu-buttons ">
+                    <div class="col-lg-2 col-md-4 col-lg-4"><a asp-action="DeleteEmployee" asp-route-id="@Model.EmployeeCode" class="d-block megamenu-button-link bg-danger text-light"><strong>Delete</strong></a></div>
+                    <div class="col-lg-2 col-md-4 col-lg-4"><a asp-action="EditEmployee" asp-route-id="@Model.EmployeeCode" class="d-block megamenu-button-link bg-info text-light"><strong>Edit</strong></a></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
